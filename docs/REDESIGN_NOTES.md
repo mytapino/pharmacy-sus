@@ -6,15 +6,17 @@ Branch: `redesign/hts-final` · Before = `main` (commit `72ea683`, ระบบ�
 
 | Finding | Rule | ไฟล์ | สิ่งที่แก้ |
 |---|---|---|---|
-| F-01 หาจุดเพิ่มยาเข้าบิล/ปุ่มดำเนินการขายไม่เจอ (A, B, E, F) | **R-06** (ใหม่) | `pages/sell_medicine.php`, `pages/payment.php`, `pages/process_sale.php` | เลือกยาแล้วเข้าบิลทันที · แถบขั้นตอน 1–3 · Empty State บิลว่าง · ปุ่มบอกจำนวนรายการ + ยอดรวม · ตัวเลือกยาแสดงชื่อสามัญ/ราคา/คงเหลือ · ปุ่ม − / + · ช่องค้นหาโฟกัสอัตโนมัติ · หน้ารับเงินบอกเงินที่ขาด · ย้ายเข้า token/Topbar ของ design.md · กันบิลว่างฝั่งเซิร์ฟเวอร์ |
+| F-01 หาจุดเพิ่มยาเข้าบิล/ปุ่มดำเนินการขายไม่เจอ (A, B, E, F) | **R-06** (ใหม่) | `pages/sell_medicine.php`, `pages/payment.php`, `pages/process_sale.php` | เลย์เอาต์ POS: การ์ดยามีรูป (ชื่อ/ชื่อสามัญ/ราคา/คงเหลือ) กดแล้วเข้าบิลทันที · ค้นหา + กรองหมวด + Enter เพิ่มรายการแรก · บิล sticky ทางขวา · แถบขั้นตอน 1–3 · Empty State บิลว่าง · ปุ่มบอกจำนวนรายการ + ยอดรวม · ปุ่ม − / + · หน้ารับเงินบอกเงินที่ขาด · ย้ายเข้า token/Topbar ของ design.md · กันบิลว่างฝั่งเซิร์ฟเวอร์ |
 | F-04 ติดที่ช่องวันหมดอายุ และไม่แน่ใจว่ากดบันทึกแล้วไปต่อไหม (A, B, E) | **R-04** (เพิ่มข้อกำหนด) | `pages/add_medicine_form.php`, `pages/medicines.php` | Loading State + กันกดซ้ำ · แถบยืนยันและแถวยาใหม่บนสุด (`?added=ID`) · แสดงวันที่ที่เลือกเป็นภาษาไทย · `*` ช่องจำเป็น + Error ใต้ช่อง · เพิ่มช่องชื่อสามัญ · datalist หมวดหมู่/หน่วย · ย้ายเข้า token/Topbar |
 
 ไม่มีการแก้ schema ฐานข้อมูล (`generic_name` มีอยู่แล้วในตาราง `medicines`)
 
+**รูปยา:** `database/supabase_schema.sql` เดิมตั้ง `image_url` เป็น NULL ทุกตัว การรันไฟล์เพื่อ reset จึงลบรูปใน Supabase · ตอนนี้ท้ายไฟล์มี `UPDATE ... image_url` 40 รายการ กู้จาก phpMyAdmin dump เดิม (`pharmacy_system`, 5 เม.ย. 2026) จับคู่ด้วย medicine_id + ชื่อยา · id 41 Dimenhydrinate 50mg ไม่มีรูป เพราะ dump เดิมเป็นยาคนละตัว
+
 ## วิธีเตรียม Before–After สำหรับอัดคลิป (รันสดจาก URL)
 
 1. **อย่า merge เข้า `main` ก่อนอัดคลิป** — `https://pharmacy-sus.vercel.app/` คือ Before
-2. Push branch นี้ขึ้น GitHub → Vercel จะสร้าง Preview URL ของ branch ให้อัตโนมัติ (ดูในแท็บ Deployments) → ใช้เป็น After
+2. (ทางเลือก) push ทับ main ได้เลย ช่วง Before ใช้ภาพนิ่งตามใบงานข้อ 8 · หรือ push เป็น branch → Vercel สร้าง Preview URL ให้ → ใช้เป็น After
    - Preview ใช้ `DATABASE_URL` เดียวกันได้ ถ้าตั้ง Environment Variable ให้ครอบคลุม Preview ด้วย (Settings → Environment Variables → เลือก Preview)
 3. ก่อนอัด รัน `database/supabase_schema.sql` ใน Supabase อีกครั้งเพื่อ reset ข้อมูล (ไม่ให้ Testmed 500mg จากการซ้อมค้างอยู่)
 4. อัดเสร็จแล้วค่อย merge `redesign/hts-final` → `main`

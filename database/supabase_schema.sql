@@ -342,3 +342,50 @@ ALTER TABLE orders ENABLE ROW LEVEL SECURITY;
 ALTER TABLE order_items ENABLE ROW LEVEL SECURITY;
 
 COMMIT;
+
+-- ============================================================
+-- รูปยา: กู้จาก phpMyAdmin dump เดิม (pharmacy_system, 5 เม.ย. 2026)
+-- ใส่ไว้ท้ายไฟล์เพื่อให้รันไฟล์นี้ซ้ำ (reset ข้อมูล) แล้วรูปยาไม่หาย
+-- ============================================================
+UPDATE medicines SET image_url = 'https://th.bing.com/th/id/OIP.AkYPk-WOVm8IWjwhkSmq3gHaE6?w=266&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3' WHERE medicine_id = 1 AND name = 'Paracetamol 500mg';
+UPDATE medicines SET image_url = 'https://th.bing.com/th/id/OIP.7b_OgiPsC45t3IOt3woGvQHaFP?w=268&h=190&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3' WHERE medicine_id = 2 AND name = 'Amoxicillin 250mg';
+UPDATE medicines SET image_url = 'https://th.bing.com/th/id/OIP.FzVOfvlL3BKMgzZ5IuTGlwHaHa?w=193&h=193&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3' WHERE medicine_id = 3 AND name = 'Ibuprofen 400mg';
+UPDATE medicines SET image_url = 'https://th.bing.com/th/id/OIP.HaPmwugrJvNLeLMF-N6ulgHaHa?w=199&h=199&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3' WHERE medicine_id = 4 AND name = 'Vitamin C 500mg';
+UPDATE medicines SET image_url = 'https://th.bing.com/th/id/OIP.MMU4cLhdbv6YTPDeTeEwjwHaHa?w=175&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3' WHERE medicine_id = 5 AND name = 'Cetirizine 10mg';
+UPDATE medicines SET image_url = 'https://th.bing.com/th/id/OIP.1WszR5Dneu73E36CKxPzAAHaHa?w=198&h=198&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3' WHERE medicine_id = 6 AND name = 'Loratadine 10mg';
+UPDATE medicines SET image_url = 'https://th.bing.com/th/id/OIP.Z8KdOJ1Ik6dMxfj9RXktCAHaFd?w=268&h=197&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3' WHERE medicine_id = 7 AND name = 'Omeprazole 20mg';
+UPDATE medicines SET image_url = 'https://th.bing.com/th/id/OIP.8DHvBmFfWuullr5oXDjiywHaHa?w=169&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3' WHERE medicine_id = 8 AND name = 'Simethicone 80mg';
+UPDATE medicines SET image_url = 'https://th.bing.com/th/id/OIP.f81_lYZgQDCdeI25QrT9mAHaHa?w=184&h=184&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3' WHERE medicine_id = 9 AND name = 'ORS Sachet';
+UPDATE medicines SET image_url = 'https://th.bing.com/th/id/OIP.RN3kBd3ibqIAogJl_My-zQHaF-?w=248&h=200&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3' WHERE medicine_id = 10 AND name = 'Dextromethorphan Syrup';
+UPDATE medicines SET image_url = 'https://th.bing.com/th/id/OIP.5G156P35uJxwojvUp874-gHaHa?w=185&h=185&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3' WHERE medicine_id = 11 AND name = 'Guaifenesin Syrup';
+UPDATE medicines SET image_url = 'https://th.bing.com/th/id/OIP.-EBv2-lIFPmAHVZTZoGiUwHaEO?w=283&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3' WHERE medicine_id = 12 AND name = 'Chlorpheniramine 4mg';
+UPDATE medicines SET image_url = 'https://th.bing.com/th/id/OIP.rZMQLzzlkxIsNJC3T_S8OwHaHa?w=179&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3' WHERE medicine_id = 13 AND name = 'Aspirin 81mg';
+UPDATE medicines SET image_url = 'https://th.bing.com/th/id/OIP.QIV7WcQbF6wuRQV-YRRQ7AHaHa?w=168&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3' WHERE medicine_id = 14 AND name = 'Metformin 500mg';
+UPDATE medicines SET image_url = 'https://5.imimg.com/data5/SELLER/Default/2023/7/326770036/BL/UA/BR/135658020/amlodipine-tablets-ip-5-mg-1000x1000.jpg' WHERE medicine_id = 15 AND name = 'Amlodipine 5mg';
+UPDATE medicines SET image_url = 'https://th.bing.com/th/id/OIP.FCOIg_WCc3VBBNdc5dcATAHaFF?w=252&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3' WHERE medicine_id = 16 AND name = 'Losartan 50mg';
+UPDATE medicines SET image_url = 'https://th.bing.com/th/id/OIP.zDHjGOz3EiyIDlGNjbaq-gHaFg?w=271&h=202&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3' WHERE medicine_id = 17 AND name = 'Atorvastatin 20mg';
+UPDATE medicines SET image_url = 'https://th.bing.com/th/id/OIP.On0UDizH66RajpzNCZhDCwHaFj?w=225&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3' WHERE medicine_id = 18 AND name = 'Clopidogrel 75mg';
+UPDATE medicines SET image_url = 'https://th.bing.com/th/id/OIP.hpi0Le9y9l6QOLQhcyvjFwHaHa?w=202&h=202&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3' WHERE medicine_id = 19 AND name = 'Azithromycin 250mg';
+UPDATE medicines SET image_url = 'https://th.bing.com/th/id/OIP._P00qg_gG7sQO4rnCJT-JgHaEK?w=295&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3' WHERE medicine_id = 20 AND name = 'Ciprofloxacin 500mg';
+UPDATE medicines SET image_url = 'https://th.bing.com/th/id/OIP.IFagLozY10EwbO57ovrIbgHaHa?w=187&h=187&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3' WHERE medicine_id = 21 AND name = 'Doxycycline 100mg';
+UPDATE medicines SET image_url = 'https://th.bing.com/th/id/OIP.cOqM7W6Tlw03A_5COwHn3AHaEP?w=289&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3' WHERE medicine_id = 22 AND name = 'Diclofenac 25mg';
+UPDATE medicines SET image_url = 'https://th.bing.com/th/id/OIP.5U2fVzUrvoB6evCZM4D7ZwHaF7?w=269&h=215&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3' WHERE medicine_id = 23 AND name = 'Mefenamic acid 500mg';
+UPDATE medicines SET image_url = 'https://th.bing.com/th/id/OIP.9rtUJdYH3v_n7TqP5_2KbwHaE1?w=281&h=184&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3' WHERE medicine_id = 24 AND name = 'Domperidone 10mg';
+UPDATE medicines SET image_url = 'https://th.bing.com/th/id/OIP.LxtRHlhKkSg7ogoL5a7wFwHaHa?w=178&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3' WHERE medicine_id = 25 AND name = 'Loperamide 2mg';
+UPDATE medicines SET image_url = 'https://th.bing.com/th/id/OIP.-ziZMgVagDRsnIv6m2OVbgHaHa?w=195&h=195&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3' WHERE medicine_id = 26 AND name = 'Fexofenadine 180mg';
+UPDATE medicines SET image_url = 'https://th.bing.com/th/id/OIP.3_xNeaFWBwMTQ2jMLgs5IQHaHa?w=195&h=195&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3' WHERE medicine_id = 27 AND name = 'Salbutamol Inhaler';
+UPDATE medicines SET image_url = 'https://th.bing.com/th/id/OIP.sFkHAWhkaVS2f4ynC2_6dwHaFj?w=230&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3' WHERE medicine_id = 28 AND name = 'Budesonide Inhaler';
+UPDATE medicines SET image_url = 'https://m.media-amazon.com/images/I/61rY4Xmt84L.jpg' WHERE medicine_id = 29 AND name = 'Ammonium chloride mixture';
+UPDATE medicines SET image_url = 'https://th.bing.com/th/id/OIP.ZOFt1gMRj7TJA8Ys9TQSMQHaHa?w=196&h=196&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3' WHERE medicine_id = 30 AND name = 'Nasal saline spray';
+UPDATE medicines SET image_url = 'https://th.bing.com/th/id/OIP.Zb4V12MiJ80iIXEBMQYEbQHaHa?w=170&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3' WHERE medicine_id = 31 AND name = 'Hydrocortisone cream 1%';
+UPDATE medicines SET image_url = 'https://th.bing.com/th/id/OIP.xnSndxP6lk6-fw0aiTtQeAHaHa?w=188&h=188&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3' WHERE medicine_id = 32 AND name = 'Clotrimazole cream 1%';
+UPDATE medicines SET image_url = 'https://th.bing.com/th/id/OIP.e4CrSY71zXlAvEsyTYY3_gHaFj?w=231&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3' WHERE medicine_id = 33 AND name = 'Mupirocin ointment 2%';
+UPDATE medicines SET image_url = 'https://th.bing.com/th/id/OIP.HnBownKZvl6VNic4P8VR5AHaGG?w=231&h=191&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3' WHERE medicine_id = 34 AND name = 'Povidone iodine 10%';
+UPDATE medicines SET image_url = 'https://th.bing.com/th/id/OIP.Y_IvEc8nKpOw2ase8KEfwAHaHa?w=202&h=202&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3' WHERE medicine_id = 36 AND name = 'Plaster bandage';
+UPDATE medicines SET image_url = 'https://th.bing.com/th/id/OIP.zeJYuZfvfg5JYIMfQSKzDAHaHa?w=194&h=193&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3' WHERE medicine_id = 37 AND name = 'Calcium carbonate 500mg';
+UPDATE medicines SET image_url = 'https://th.bing.com/th/id/OIP.2s-0Dh1sDKcoHgzoUw3O8QHaGb?w=221&h=192&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3' WHERE medicine_id = 38 AND name = 'Zinc 20mg';
+UPDATE medicines SET image_url = 'https://th.bing.com/th/id/OIP.8gYR1Njd8EnPyKdP6kPETgHaHa?w=164&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3' WHERE medicine_id = 39 AND name = 'Vitamin B Complex';
+UPDATE medicines SET image_url = 'https://th.bing.com/th/id/OIP.BM_xLkr7oE4jN97qG3A1agHaEY?w=312&h=185&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3' WHERE medicine_id = 40 AND name = 'Folic acid 5mg';
+-- id 35: ชื่อใน dump เดิมคือ 'Alcohol 72%' ส่วนปัจจุบันคือ 'Alcohol 70%' — สินค้าเดียวกัน ใช้รูปเดิม
+UPDATE medicines SET image_url = 'https://upload.wikimedia.org/wikipedia/commons/b/b7/Rubbing_alcohol.JPG' WHERE medicine_id = 35;
+-- id 41 Dimenhydrinate 50mg: dump เดิมเป็นยาคนละตัว ('ยาแก้เหน็บชา') จึงไม่ใส่รูป
