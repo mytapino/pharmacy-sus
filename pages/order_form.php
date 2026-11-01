@@ -13,15 +13,8 @@
     </style>
 </head>
 <body class="bg-light">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4 shadow">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="index.php">💊 PHARMACY SYSTEM</a>
-            <div class="navbar-nav ms-auto">
-                <a class="nav-link" href="index.php">หน้าหลัก</a>
-                <a class="nav-link active" href="order_form.php">ระบบขายยา</a>
-            </div>
-        </div>
-    </nav>
+    <?php $topbar_active = ''; include __DIR__ . '/_topbar.php'; ?>
+<div style="height:24px" aria-hidden="true"></div>
 
     <div class="container mb-5">
         <div class="card shadow-sm border-0 p-4">

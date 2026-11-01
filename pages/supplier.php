@@ -302,18 +302,7 @@ function safe($value): string {
 </head>
 <body>
 
-<header class="site-header">
-    <div class="site-header__inner">
-        <div class="brand">PHARMACY SYSTEM</div>
-        <nav class="nav">
-            <a href="index.php">หน้าหลัก</a>
-            <a href="sales_history.php">ประวัติการขาย</a>
-            <a href="sell_medicine.php">ขายยา</a>
-            <a href="medicines.php">จัดการสต็อกยา</a>
-            <a class="active" href="#">ซัพพลายเออร์</a>
-        </nav>
-    </div>
-</header>
+<?php $topbar_active = 'supplier'; include __DIR__ . '/_topbar.php'; ?>
 
 <main class="page">
     <div class="page-header">

@@ -257,17 +257,8 @@ $sort_by         = trim($_GET['sort_by'] ?? 'date_desc');
 <body>
 
     <!-- Navigation Topbar -->
-    <nav class="navbar navbar-expand-lg navbar-custom">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center gap-2" href="index.php">
-                <i class="bi bi-capsule"></i> PHARMACY SYSTEM
-            </a>
-            <div class="d-flex gap-2">
-                <a class="nav-link-custom" href="index.php">หน้าหลัก</a>
-                <a class="nav-link-custom active" href="sales_history.php">ประวัติการขาย</a>
-            </div>
-        </div>
-    </nav>
+    <?php $topbar_active = 'history'; include __DIR__ . '/_topbar.php'; ?>
+<div style="height:24px" aria-hidden="true"></div>
 
     <!-- Main Container -->
     <div class="container">

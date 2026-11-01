@@ -38,12 +38,8 @@ $customers = $conn->query("SELECT * FROM customers WHERE customer_id != 9999 ORD
 </head>
 <body>
 
-<nav class="navbar navbar-dark mb-4" style="background-color: var(--main-color);">
-    <div class="container">
-        <a class="navbar-brand fw-bold" href="index.php">💊 PHARMACY SYSTEM</a>
-        <a href="sell_medicine.php" class="btn btn-outline-light btn-sm">ไปหน้าขายยา</a>
-    </div>
-</nav>
+<?php $topbar_active = ''; include __DIR__ . '/_topbar.php'; ?>
+<div style="height:24px" aria-hidden="true"></div>
 
 <div class="container">
     <h3 class="fw-bold mb-4" style="color: var(--main-color);">👥 ระบบจัดการสมาชิก</h3>

@@ -26,18 +26,8 @@ $employees = $conn->query("SELECT * FROM employees ORDER BY employee_id DESC")->
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-    <div class="container">
-        <a class="navbar-brand fw-bold" href="index.php">💊 PHARMACY SYSTEM</a>
-        <div class="collapse navbar-collapse">
-            <ul class="navbar-nav ms-auto align-items-center">
-                <li class="nav-item"><a class="nav-link text-white" href="index.php">หน้าหลัก</a></li>
-                <li class="nav-item"><a class="nav-link text-white fw-bold active" href="employees.php">จัดการพนักงาน</a></li>
-                <li class="nav-item ms-3"><a href="sell_medicine.php" class="btn btn-warning btn-sm fw-bold px-4 rounded-pill">🛒 ขายยา</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
+<?php $topbar_active = 'employees'; include __DIR__ . '/_topbar.php'; ?>
+<div style="height:24px" aria-hidden="true"></div>
 
 <div class="container py-4">
     <div class="card p-4">

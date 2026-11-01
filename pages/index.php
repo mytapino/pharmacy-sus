@@ -844,20 +844,7 @@ tbody tr:last-child td { border-bottom: 0; }
 </head>
 <body>
 
-<header class="site-header">
-    <div class="site-header__inner">
-        <div class="brand">PHARMACY SYSTEM</div>
-
-        <nav class="nav" aria-label="เมนูหลัก">
-            <a class="active" href="index.php">หน้าหลัก</a>
-            <a href="medicines.php">จัดการผลิตภัณฑ์</a>
-            <a href="supplier.php">จัดการซัพพลายเออร์</a>
-            <a href="employees.php">จัดการพนักงาน</a>
-            <a href="sales_history.php">ประวัติการขาย</a>
-            <a href="sell_medicine.php">ขายยา</a>
-        </nav>
-    </div>
-</header>
+<?php $topbar_active = 'home'; include __DIR__ . '/_topbar.php'; ?>
 
 <main class="page">
     <div class="page-header">

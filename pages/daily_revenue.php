@@ -60,16 +60,8 @@ foreach ($rows as $r) {
 </head>
 <body>
 
-<nav class="navbar navbar-dark bg-dark mb-4 shadow-sm">
-    <div class="container">
-        <a class="navbar-brand fw-bold" href="index.php">💊 PHARMACY SYSTEM</a>
-        <div class="navbar-nav flex-row align-items-center">
-            <a class="nav-link me-3 text-secondary" href="index.php">หน้าหลัก</a>
-            <a class="nav-link active me-3 text-white" href="#">รายได้รายวัน</a>
-            <a class="nav-link me-3 text-secondary" href="sales_history.php">ประวัติการขาย</a>
-        </div>
-    </div>
-</nav>
+<?php $topbar_active = 'history'; include __DIR__ . '/_topbar.php'; ?>
+<div style="height:24px" aria-hidden="true"></div>
 
 <div class="container pb-5">
     <div class="d-flex justify-content-between align-items-center mb-3">
