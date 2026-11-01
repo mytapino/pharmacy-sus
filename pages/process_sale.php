@@ -5,7 +5,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $customer_id = $_POST['customer_id'];
     $employee_id = DEFAULT_EMPLOYEE_ID; // ไม่มีระบบ login: บันทึกการขายเป็นพนักงาน Admin
     $grand_total = $_POST['grand_total']; // รับค่าผลรวมสุทธิ
-    $items = $_POST['items'];
+    $items = $_POST['items'] ?? [];
+
+    // บิลว่าง — กลับไปหน้าขายยา (ปุ่มถูกปิดไว้แล้วฝั่งหน้าจอ แต่กันไว้อีกชั้น)
+    if (empty($items)) {
+        header("Location: sell_medicine.php");
+        exit();
+    }
 
     try {
         $conn->beginTransaction();

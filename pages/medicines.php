@@ -4,6 +4,8 @@ require_once 'db.php';
 // รับค่าสำหรับ Search & Filter
 $search = trim($_GET['search'] ?? '');
 $status_filter = $_GET['status'] ?? '';
+// F-04 / R-04: หลังเพิ่มยาใหม่ กลับมาหน้านี้พร้อม ?added=ID เพื่อยืนยันและแสดงยานั้นบนสุด
+$added_id = (int)($_GET['added'] ?? 0);
 
 // สร้าง Dynamic Query
 $sql = "SELECT * FROM medicines WHERE 1=1";
@@ -23,10 +25,17 @@ if ($status_filter !== '') {
 }
 
 // เรียงลำดับตามสถานะ active ขึ้นก่อน และเรียงตามชื่อยาเหมือนเดิม
-$sql .= " ORDER BY status ASC, name ASC";
+$sql .= $added_id > 0 ? " ORDER BY (medicine_id = " . $added_id . ") DESC, status ASC, name ASC" : " ORDER BY status ASC, name ASC";
 $stmt = $conn->prepare($sql);
 $stmt->execute($params);
 $medicines = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+$added_med = null;
+if ($added_id > 0) {
+    $q = $conn->prepare("SELECT name, quantity_in_stock, unit_type FROM medicines WHERE medicine_id = ?");
+    $q->execute([$added_id]);
+    $added_med = $q->fetch(PDO::FETCH_ASSOC) ?: null;
+}
 
 function safe($value): string {
     return htmlspecialchars((string)($value ?? ''), ENT_QUOTES, 'UTF-8');
@@ -255,6 +264,13 @@ function safe($value): string {
         .action-link-danger { color: var(--danger-600); }
         .action-link-danger:hover { color: #8C3A3A; }
 
+        .alert-success { display: flex; justify-content: space-between; align-items: center; gap: 16px;
+            border: 1px solid var(--success-600); background: var(--primary-50); color: var(--text-primary);
+            border-radius: 8px; padding: 12px 16px; margin-bottom: 24px; }
+        .alert-success strong { color: var(--success-600); }
+        .data-table tr.row-added { background: var(--primary-50); box-shadow: inset 4px 0 0 var(--primary-600); }
+        .badge-new { background: var(--primary-600); color: #FFFFFF; margin-left: 8px; }
+
         .empty-state {
             padding: 48px 24px;
             text-align: center;
@@ -291,6 +307,13 @@ function safe($value): string {
         </div>
         <a class="btn-primary" href="add_medicine_form.php">+ เพิ่มยาใหม่</a>
     </div>
+
+    <?php if ($added_med): ?>
+        <div class="alert-success" role="status">
+            <span><strong>บันทึกยาใหม่แล้ว</strong> — <?php echo safe($added_med['name']); ?> จำนวน <?php echo (int)$added_med['quantity_in_stock']; ?> <?php echo safe($added_med['unit_type']); ?> แสดงอยู่แถวบนสุดของตาราง</span>
+            <a class="action-link" href="add_medicine_form.php">+ เพิ่มยาอีกรายการ</a>
+        </div>
+    <?php endif; ?>
 
     <section class="panel">
         <!-- Filter & Search Bar -->
@@ -332,7 +355,7 @@ function safe($value): string {
                         </tr>
                     <?php else: ?>
                         <?php foreach ($medicines as $med): ?>
-                            <tr class="<?php echo $med['status'] == 'inactive' ? 'status-inactive' : ''; ?>">
+                            <tr class="<?php echo $med['status'] == 'inactive' ? 'status-inactive' : ''; ?><?php echo (int)$med['medicine_id'] === $added_id ? ' row-added' : ''; ?>">
                                 <td>
                                     <div class="product-info">
                                         <?php if (!empty($med['image_url'])): ?>
@@ -341,7 +364,7 @@ function safe($value): string {
                                             <div class="product-thumb" style="display:grid;place-items:center;color:var(--text-secondary);font-size:10px;">ไม่มีรูป</div>
                                         <?php endif; ?>
                                         <div>
-                                            <div class="product-name-text"><?php echo safe($med['name']); ?></div>
+                                            <div class="product-name-text"><?php echo safe($med['name']); ?><?php if ((int)$med['medicine_id'] === $added_id): ?><span class="badge badge-new">เพิ่งเพิ่ม</span><?php endif; ?></div>
                                             <div class="product-generic-text"><?php echo safe($med['generic_name'] ?: '-'); ?></div>
                                         </div>
                                     </div>
