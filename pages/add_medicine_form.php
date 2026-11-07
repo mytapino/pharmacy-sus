@@ -99,23 +99,23 @@ $today = date('Y-m-d');
         .req { color: var(--danger-600); }
         .input { width: 100%; height: 40px; border: 1px solid var(--border-default); border-radius: 8px; padding: 0 16px;
                  font-family: inherit; font-size: 14px; background: var(--surface); color: var(--text-primary); }
-        .input:hover { border-color: #C3CFCB; }
+        .input:hover { border-color: var(--primary-600); }
         .input:focus { outline: none; border-color: var(--primary-600); box-shadow: 0 0 0 3px var(--primary-50); }
         .input.is-error { border-color: var(--danger-600); }
         .helper { margin: 8px 0 0; font-size: 12px; line-height: 18px; color: var(--text-secondary); }
         .field-error { margin: 8px 0 0; font-size: 12px; line-height: 18px; color: var(--danger-600); display: none; }
         .is-error + .helper + .field-error, .is-error ~ .field-error { display: block; }
 
-        .alert-error { border: 1px solid var(--danger-600); color: var(--danger-600); background: #FDF2F2;
+        .alert-error { border: 1px solid var(--danger-600); color: var(--danger-600); background: var(--surface);
                        border-radius: 8px; padding: 12px 16px; margin-bottom: 24px; }
         .note { color: var(--text-secondary); font-size: 12px; margin: 0 0 16px; }
 
         .actions { display: flex; gap: 16px; margin-top: 24px; }
         .btn { height: 40px; border-radius: 8px; padding: 0 16px; display: inline-flex; align-items: center; justify-content: center;
                font-family: inherit; font-size: 14px; font-weight: 500; cursor: pointer; border: none; }
-        .btn-primary { flex: 1; background: var(--primary-600); color: #FFFFFF; }
+        .btn-primary { flex: 1; background: var(--primary-600); color: var(--surface); }
         .btn-primary:hover { background: var(--primary-700); }
-        .btn-primary:disabled { background: #E3E8E6; color: var(--text-secondary); cursor: progress; }
+        .btn-primary:disabled { background: var(--background-page); color: var(--text-secondary); box-shadow: inset 0 0 0 1px var(--border-default); cursor: progress; }
         .btn-secondary { border: 1px solid var(--border-default); background: var(--surface); color: var(--text-primary); }
         .btn-secondary:hover { border-color: var(--primary-600); color: var(--primary-700); }
         .spinner { width: 16px; height: 16px; border: 2px solid currentColor; border-right-color: transparent;

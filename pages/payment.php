@@ -39,7 +39,7 @@ $bill_total = (float)$stmt->fetchColumn();
         .step__num { width: 24px; height: 24px; border-radius: 6px; display: grid; place-items: center;
                      background: var(--background-page); font-size: 12px; font-weight: 600; }
         .step.is-current { border-color: var(--primary-600); color: var(--primary-700); background: var(--primary-50); }
-        .step.is-current .step__num { background: var(--primary-600); color: #FFFFFF; }
+        .step.is-current .step__num { background: var(--primary-600); color: var(--surface); }
         .step__arrow { align-self: center; color: var(--text-secondary); }
 
         .panel { background: var(--surface); border: 1px solid var(--border-default); border-radius: 12px; padding: 24px; }
@@ -58,9 +58,9 @@ $bill_total = (float)$stmt->fetchColumn();
         .helper { margin: 8px 0 0; font-size: 12px; line-height: 18px; color: var(--text-secondary); }
         .helper.is-error { color: var(--danger-600); }
         .btn-primary { width: 100%; height: 48px; margin-top: 16px; border: none; border-radius: 8px;
-                       background: var(--primary-600); color: #FFFFFF; font-family: inherit; font-size: 16px; font-weight: 600; cursor: pointer; }
+                       background: var(--primary-600); color: var(--surface); font-family: inherit; font-size: 16px; font-weight: 600; cursor: pointer; }
         .btn-primary:hover { background: var(--primary-700); }
-        .btn-primary:disabled { background: #E3E8E6; color: var(--text-secondary); cursor: not-allowed; }
+        .btn-primary:disabled { background: var(--background-page); color: var(--text-secondary); box-shadow: inset 0 0 0 1px var(--border-default); cursor: not-allowed; }
         .back { display: inline-block; margin-top: 16px; color: var(--primary-700); font-weight: 500; text-decoration: none; }
     </style>
 </head>

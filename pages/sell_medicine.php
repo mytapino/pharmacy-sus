@@ -76,7 +76,7 @@ $med_json = array_map(fn($m) => [
         .step__num { width: 24px; height: 24px; border-radius: 6px; display: grid; place-items: center;
                      background: var(--background-page); font-size: 12px; font-weight: 600; }
         .step.is-current { border-color: var(--primary-600); color: var(--primary-700); background: var(--primary-50); }
-        .step.is-current .step__num { background: var(--primary-600); color: #FFFFFF; }
+        .step.is-current .step__num { background: var(--primary-600); color: var(--surface); }
         .step.is-done { color: var(--success-600); }
         .step__arrow { align-self: center; color: var(--text-secondary); }
 
@@ -107,10 +107,10 @@ $med_json = array_map(fn($m) => [
         .card:hover { border-color: var(--primary-600); }
         .card:focus-visible { outline: none; border-color: var(--primary-600); box-shadow: 0 0 0 3px var(--primary-50); }
         .card.in-cart { border-color: var(--primary-600); box-shadow: inset 0 0 0 1px var(--primary-600); }
-        .card__img { height: 112px; background: #FFFFFF; display: grid; place-items: center;
+        .card__img { height: 112px; background: var(--surface); display: grid; place-items: center;
                      border-bottom: 1px solid var(--border-default); color: var(--text-secondary); font-size: 12px; }
         .card__imgel { width: 100%; height: 112px; object-fit: contain; padding: 8px; display: grid; place-items: center; background: var(--background-page); }
-        img.card__imgel { background: #FFFFFF; }
+        img.card__imgel { background: var(--surface); }
         .card__body { padding: 12px 16px 16px; display: flex; flex-direction: column; gap: 2px; flex: 1; width: 100%; }
         .card__name { font-weight: 600; line-height: 20px; }
         .card__generic { font-size: 12px; line-height: 18px; color: var(--text-secondary); }
@@ -118,10 +118,10 @@ $med_json = array_map(fn($m) => [
         .card__price { font-weight: 600; }
         .card__stock { font-size: 12px; line-height: 18px; color: var(--text-secondary); }
         .card__stock.is-low { color: var(--warning-600); }
-        .card__add { width: 32px; height: 32px; border-radius: 8px; background: var(--primary-600); color: #FFFFFF;
+        .card__add { width: 32px; height: 32px; border-radius: 8px; background: var(--primary-600); color: var(--surface);
                      display: grid; place-items: center; font-size: 18px; line-height: 1; }
         .card:hover .card__add { background: var(--primary-700); }
-        .card__badge { position: absolute; top: 8px; right: 8px; background: var(--primary-600); color: #FFFFFF;
+        .card__badge { position: absolute; top: 8px; right: 8px; background: var(--primary-600); color: var(--surface);
                        font-size: 12px; font-weight: 600; line-height: 16px; padding: 4px 8px; border-radius: 6px; }
         .catalog-empty { grid-column: 1 / -1; padding: 48px 16px; text-align: center; color: var(--text-secondary); }
 
@@ -134,7 +134,7 @@ $med_json = array_map(fn($m) => [
                 border-bottom: 1px solid var(--border-default); align-items: center; }
         .line:first-child { padding-top: 0; }
         .line__thumb { width: 40px; height: 40px; border-radius: 8px; border: 1px solid var(--border-default);
-                       background: #FFFFFF; object-fit: contain; display: grid; place-items: center;
+                       background: var(--surface); object-fit: contain; display: grid; place-items: center;
                        font-size: 10px; line-height: 12px; text-align: center; color: var(--text-secondary); }
         .line__name { font-weight: 600; line-height: 20px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
         .line__meta { font-size: 12px; line-height: 18px; color: var(--text-secondary); }
@@ -159,12 +159,12 @@ $med_json = array_map(fn($m) => [
         .total__label { font-size: 16px; font-weight: 600; }
         .total__value { font-size: 28px; line-height: 36px; font-weight: 700; }
         .btn-primary { width: 100%; min-height: 48px; margin-top: 16px; border: none; border-radius: 8px; padding: 8px 16px;
-                       background: var(--primary-600); color: #FFFFFF; font-size: 16px; font-weight: 600; cursor: pointer; }
+                       background: var(--primary-600); color: var(--surface); font-size: 16px; font-weight: 600; cursor: pointer; }
         .btn-primary:hover { background: var(--primary-700); }
-        .btn-primary:disabled { background: #E3E8E6; color: var(--text-secondary); cursor: not-allowed; }
+        .btn-primary:disabled { background: var(--background-page); color: var(--text-secondary); box-shadow: inset 0 0 0 1px var(--border-default); cursor: not-allowed; }
 
-        .toast { position: fixed; left: 50%; bottom: 32px; transform: translate(-50%, 8px); background: var(--text-primary); color: #FFFFFF;
-                 padding: 12px 16px; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,.16); opacity: 0;
+        .toast { position: fixed; left: 50%; bottom: 32px; transform: translate(-50%, 8px); background: var(--text-primary); color: var(--surface);
+                 padding: 12px 16px; border-radius: 8px; opacity: 0;
                  transition: all .2s; pointer-events: none; z-index: 10; }
         .toast.show { opacity: 1; transform: translate(-50%, 0); }
 

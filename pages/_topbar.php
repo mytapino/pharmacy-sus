@@ -20,21 +20,24 @@ $pt_links = [
 ?>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-    .pt-header { min-height: 64px; background: #FFFFFF; border-bottom: 1px solid #DCE4E1; font-family: "Noto Sans Thai", sans-serif;
+    /* token จาก design.md 1.2 — ประกาศในขอบเขต Topbar เพื่อใช้ได้ทั้งหน้าธีมใหม่และหน้า Bootstrap เดิม */
+    .pt-header { --primary-600: #2F6F68; --primary-700: #245A55; --primary-50: #EAF4F2; --background-page: #F6F8F7;
+                 --surface: #FFFFFF; --text-primary: #25312F; --text-secondary: #66726F; --border-default: #DCE4E1; }
+    .pt-header { min-height: 64px; background: var(--surface); border-bottom: 1px solid var(--border-default); font-family: "Noto Sans Thai", sans-serif;
                  font-size: 14px; line-height: 22px; position: relative; z-index: 20; }
     .pt-header__inner { width: min(1280px, calc(100% - 64px)); min-height: 64px; margin: 0 auto;
                         display: flex; align-items: center; justify-content: space-between; gap: 32px; }
-    .pt-brand { font-size: 16px; line-height: 24px; font-weight: 700; color: #25312F !important; text-decoration: none !important; white-space: nowrap; }
+    .pt-brand { font-size: 16px; line-height: 24px; font-weight: 700; color: var(--text-primary) !important; text-decoration: none !important; white-space: nowrap; }
     .pt-nav { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; justify-content: flex-end; margin: 0; }
-    .pt-nav a { color: #66726F; padding: 8px 16px; border-radius: 8px; font-weight: 500; text-decoration: none !important; white-space: nowrap; }
-    .pt-nav a:hover { background: #F6F8F7; color: #25312F; }
-    .pt-nav a.is-active { color: #245A55; background: #EAF4F2; }
-    .pt-divider { width: 1px; height: 24px; background: #DCE4E1; margin: 0 8px; }
+    .pt-nav a { color: var(--text-secondary); padding: 8px 16px; border-radius: 8px; font-weight: 500; text-decoration: none !important; white-space: nowrap; }
+    .pt-nav a:hover { background: var(--background-page); color: var(--text-primary); }
+    .pt-nav a.is-active { color: var(--primary-700); background: var(--primary-50); }
+    .pt-divider { width: 1px; height: 24px; background: var(--border-default); margin: 0 8px; }
     .pt-nav a.pt-cta { display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 16px;
-                       background: #2F6F68; color: #FFFFFF; font-weight: 600; }
-    .pt-nav a.pt-cta:hover { background: #245A55; color: #FFFFFF; }
-    .pt-nav a.pt-cta:focus-visible { outline: none; box-shadow: 0 0 0 3px #EAF4F2, 0 0 0 5px #2F6F68; }
-    .pt-nav a.pt-cta.is-active { background: #245A55; color: #FFFFFF; box-shadow: inset 0 -3px 0 #EAF4F2; }
+                       background: var(--primary-600); color: var(--surface); font-weight: 600; }
+    .pt-nav a.pt-cta:hover { background: var(--primary-700); color: var(--surface); }
+    .pt-nav a.pt-cta:focus-visible { outline: none; box-shadow: 0 0 0 3px var(--primary-50), 0 0 0 5px var(--primary-600); }
+    .pt-nav a.pt-cta.is-active { background: var(--primary-700); color: var(--surface); box-shadow: inset 0 -3px 0 var(--primary-50); }
     .pt-nav a.pt-cta svg { flex: 0 0 auto; }
     @media (max-width: 900px) { .pt-header__inner { width: calc(100% - 48px); flex-wrap: wrap; padding: 8px 0; } .pt-divider { display: none; } }
 </style>
